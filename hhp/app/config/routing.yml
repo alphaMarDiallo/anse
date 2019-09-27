@@ -1,0 +1,8 @@
+ansehhp:
+    resource: "@AnsehhpBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
