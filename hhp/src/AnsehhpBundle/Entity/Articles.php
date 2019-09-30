@@ -37,9 +37,9 @@ class Articles
     private $article;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="link", type="integer", nullable=false)
+     * @ORM\Column(name="link", type="string", length=65535, nullable=false)
      */
     private $link;
 

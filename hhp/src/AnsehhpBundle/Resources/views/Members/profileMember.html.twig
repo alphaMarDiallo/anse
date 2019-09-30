@@ -1,0 +1,27 @@
+{% extends 'Layout_back.html.twig' %}
+
+
+{% block content %}
+
+ <h3 class="display-4 text-center text-warning">Détail du membre : {{members.firstName}} {{members.lastName}} </h3><hr>
+    <div class="col-lg-6 col-md-12 mx-auto form1">
+	<div class="card bg-light">
+        <div class="card-body text-center">
+            <h4 class="card-title text-center">Nom : {{members.lastName}}
+            </h4><hr>
+            <h5 class="card-title text-center">Prenom : {{members.firstName}}
+            </h5><hr>
+            <p class="card-text text-center">Date de Naissance : {{members.dateOfBirth|date('Y-m-d')}}</p>
+		    <p class="card-text text-center">Email : {{members.email}}</p>
+		    <p class="card-text text-center">Adresse : {{members.address}}</p>    
+		    <p class="card-text text-center">Country : {{members.country}}</p>
+		    <p class="card-text text-center">Téléphone : {{members.phone}}</p>
+           
+
+
+		</div>
+
+    </div>
+	</div> 
+
+{% endblock %}

@@ -13,62 +13,20 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class MembersController extends Controller
 {
+    //GESTION DU PROFIL MEMBRE
     /**
-     * @Route("/membre/inscription/", name="membre_inscription")
+     * @Route("/members/profileMember/{idMember}", name="profileMember")
      */
-    // public function inscriptionMemberAction(Request $request, UserPasswordEncoderInterface $encoder)
-    // {
-
-    //     $member = new Members;
-
-    //     $form = $this->createForm(
-    //         MembersType::class,
-    //         $member
-    //     );
-
-    //     $form->handleRequest($request);
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         $em = $this->getDoctrine()->getManager();
-
-    //         $em->persist($member);
-    //         $member->setStatut('0');
-
-    //         $password = $member->getPassword();
-    //         // password saisi dans le formulaire
-
-    //         $password_crypte = $encoder->encodePassword($member, $password);
-
-    //         $member->setPassword($password_crypte);
-    //         // cryptage du password
-
-    //         $member->setSalt(NULL);
-    //         $member->setRoles(['ROLE_USER']);
-
-    //         $em->flush();
-    //         // je l' enregistre puis execute vers la bdd
-
-    //         $request->getSession()->getFlashBag()->add('success', $member->getNom() . ' vous avez réussi votre inscription !');
-    //         // message de validation
-
-    //         return $this->redirectToRoute('connexion');
-    //         // redirection 
-    //     }
-
-    //     $params = array(
-    //         'memberForm' => $form->createView(),
-    //     );
-    //     return $this->render('@Ansehhp/Members/suscribe.html.twig', $params);
-    // }
-
-
-
-    /**
-     * @Route("/membre/profil/", name="membre_profil")
-     */
-    public function profileMemberAction()
+    public function profileMemberAction($idMember)
     {
-        $params = array();
-        return $this->render('@Ansehhp/Members/memberProfile.html.twig', $params);
+        $repo = $this->getDoctrine()->getRepository(Members::class);
+        $members = $repo->find($idMember);
+
+        $params = array(
+            'idMember' => $idMember,
+            'members' => $members
+        );
+
+        return $this->render('@Ansehhp/Members/profileMember.html.twig', $params);
     }
 }

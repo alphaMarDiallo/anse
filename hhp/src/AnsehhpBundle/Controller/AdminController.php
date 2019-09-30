@@ -41,13 +41,21 @@ class AdminController extends Controller
         return $this->render('@Ansehhp/Admin/allMembers.html.twig', $params);
     }
 
-    //GESTION PROFIL MEMBRE
+    //GESTION DU PROFIL MEMBRE
     /**
-     * @Route("/admin/profileMember", name="profileMember")
+     * @Route("/admin/profileMember/{idMember}", name="profileMember")
      */
-    public function profileMembersAction()
+    public function profileMemberAction($idMember)
     {
-        return $this->render('@Ansehhp/Admin/profileMember.html.twig');
+        $repo = $this->getDoctrine()->getRepository(Members::class);
+        $members = $repo->find($idMember);
+
+        $params = array(
+            'idMember' => $idMember,
+            'members' => $members
+        );
+
+        return $this->render('@Ansehhp/Members/profileMember.html.twig', $params);
     }
 
     //GESTION DES ARTICLES
