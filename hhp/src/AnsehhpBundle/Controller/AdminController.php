@@ -5,6 +5,8 @@ namespace AnsehhpBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use AnsehhpBundle\Entity\Members;
+use AnsehhpBundle\Entity\Articles;
+// use Symfony\Component\HttpFoundation\Request;
 
 
 class AdminController extends Controller
@@ -22,26 +24,26 @@ class AdminController extends Controller
     }
     //GESTION DES MEMBRES
     /**
-     * @Route("/admin/all_members", name="all_members")
+     * @Route("/admin/allMembers", name="allMembers")
      */
     public function allMembersAction()
     {
 
         $repository = $this->getDoctrine()->getRepository(Members::class);
-         
+
         $members = $repository->findAll();
-        
+
         $params = array(
-        'membres' => $members
-        
+            'members' => $members
+
         );
 
-        return $this->render('@Ansehhp/Admin/allMembers.html.twig');
+        return $this->render('@Ansehhp/Admin/allMembers.html.twig', $params);
     }
 
     //GESTION PROFIL MEMBRE
     /**
-     * @Route("/admin/profile_member", name="profile_member")
+     * @Route("/admin/profileMember", name="profileMember")
      */
     public function profileMembersAction()
     {
@@ -50,10 +52,19 @@ class AdminController extends Controller
 
     //GESTION DES ARTICLES
     /**
-     * @Route("/admin/show_articles", name="show_articles")
+     * @Route("/admin/showArticles", name="showArticles")
      */
     public function showArticlesAction()
     {
-        return $this->render('@Ansehhp/Admin/showArticles.html.twig');
+        $repository = $this->getDoctrine()->getRepository(Articles::class);
+
+        $articles = $repository->findAll();
+
+        $params = array(
+            'articles' => $articles
+
+        );
+
+        return $this->render('@Ansehhp/Admin/showArticles.html.twig', $params);
     }
-}
+}// FIN class AdminController

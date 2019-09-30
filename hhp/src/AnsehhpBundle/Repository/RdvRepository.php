@@ -7,5 +7,5 @@ namespace AnsehhpBundle\Repository;
  *
  */
 
-class RdvRepository extends \Doctrine\ORM\Entity\Reposiroty
+class RdvRepository extends \Doctrine\ORM\EntityRepository
 { }

@@ -12,7 +12,15 @@ class ArticlesController extends Controller
      */
     public function showArticlesAction()
     {
-        return $this->render('@Ansehhp/Articles/articles.html.twig');
+        $repository = $this->getDoctrine()->getRepository(Articles::class);
+
+        $articles = $repository->findAll();
+
+        $params = array(
+            'articles' => $articles
+
+        );
+        return $this->render('@Ansehhp/Articles/articles.html.twig',$params);
     }
 
     /**
