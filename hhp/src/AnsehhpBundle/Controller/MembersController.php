@@ -3,13 +3,10 @@
 namespace AnsehhpBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
 use AnsehhpBundle\Entity\Members;
-use AnsehhpBundle\Form\MembersType;
 
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 
 class MembersController extends Controller
 {
@@ -17,7 +14,22 @@ class MembersController extends Controller
     /**
      * @Route("/members/profileMember/{idMember}", name="profileMember")
      */
-    public function profileMemberAction($idMember)
+    public function profileMemberAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository(Members::class);
+        $members = $repo->find($id);
+
+        $params = array(
+            'members' => $members
+        );
+
+        return $this->render('@Ansehhp/Members/profileMember.html.twig', $params);
+    }
+    //GESTION DE MISE A JOUR DE'UN MEMBRE
+    /**
+     * @Route("/admin/adminMemberUpdate/{idMember}", name="adminMemberUpdate")
+     */
+    public function adminMemberUpdateAction($idMember)
     {
         $repo = $this->getDoctrine()->getRepository(Members::class);
         $members = $repo->find($idMember);
@@ -29,4 +41,19 @@ class MembersController extends Controller
 
         return $this->render('@Ansehhp/Members/profileMember.html.twig', $params);
     }
+    //SUPPRESSION D'UN MEMBRE
+    /**
+     * @Route("/admin/adminMemberDelete/{idMember}", name="adminMemberDelete")
+     */
+    public function adminMemberDeleteAction($idMember, Request $request)
+    {
+
+        $params = array();
+        $request->getSession()->getFlashBag()->add('success', 'Le patient N°' . $idMember . 'a bien été supprimé');
+
+
+        return $this->redirecToRoute('home/index.html.twig');
+    }
+     
+
 }

@@ -4,6 +4,7 @@ namespace AnsehhpBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use AnsehhpBundle\Entity\Articles;
 
 class ArticlesController extends Controller
 {
@@ -20,14 +21,23 @@ class ArticlesController extends Controller
             'articles' => $articles
 
         );
-        return $this->render('@Ansehhp/Articles/articles.html.twig',$params);
+        return $this->render('@Ansehhp/Articles/articles.html.twig', $params);
     }
 
     /**
-     * @Route("/articles/art", name="art")
+     * @Route("/articles/art/{idArticle}", name="art")
      */
-    public function showArtAction()
+    public function showArtAction($idArticle)
     {
-        return $this->render('@Ansehhp/Articles/art.html.twig');
+        $repo = $this->getDoctrine()->getRepository(Articles::class);
+        $article = $repo->find($idArticle);
+
+        $params = array(
+            'idArticle' => $idArticle,
+            'article' => $article
+        );
+
+
+        return $this->render('@Ansehhp/Articles/art.html.twig', $params);
     }
 }

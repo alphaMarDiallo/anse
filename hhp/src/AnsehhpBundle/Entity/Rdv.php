@@ -3,6 +3,7 @@
 namespace AnsehhpBundleEntity;
 
 use Doctrine\ORM\Mapping as ORM;
+// use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Rdv
@@ -142,4 +143,13 @@ class Rdv
     {
         return $this->memberid;
     }
+    /**
+     * Get idmember
+     * @return idmember
+     * */
+    public function getIdmember()
+    {
+        return $this->idmember;
+    }
+
 }

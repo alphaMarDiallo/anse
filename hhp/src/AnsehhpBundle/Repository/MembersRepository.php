@@ -2,7 +2,7 @@
 
 namespace AnsehhpBundle\Repository;
 
-// use AnsehhpBundle\Entity\Members;
+use AnsehhpBundle\AnsehhpBundle;
 
 /**
  *MembersRepository
