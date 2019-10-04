@@ -46,10 +46,10 @@ class Rdv
     /**
      * @var \Members
      *
-     * @ORM\ManyToOne(targetEntity="Members")
+     * @ORM\ManyToOne(targetEntity="AnsehhpBundle\Entity\Members")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="memberId", referencedColumnName="idMember")
-     * })
+     *  @ORM\JoinColumn(name="memberId",referencedColumnName="idMember")
+     * }) 
      */
     private $memberid;
 

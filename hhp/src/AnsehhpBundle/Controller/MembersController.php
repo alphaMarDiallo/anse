@@ -5,6 +5,7 @@ namespace AnsehhpBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use AnsehhpBundle\Entity\Members;
+use AnsehhpBundle\Entity\Rdv;
 
 
 
@@ -24,7 +25,8 @@ class MembersController extends Controller
         );
 
         return $this->render('@Ansehhp/Members/profileMember.html.twig', $params);
-    }
+    }   
+
     //GESTION DE MISE A JOUR DE'UN MEMBRE
     /**
      * @Route("/admin/adminMemberUpdate/{idMember}", name="adminMemberUpdate")
@@ -41,6 +43,7 @@ class MembersController extends Controller
 
         return $this->render('@Ansehhp/Members/profileMember.html.twig', $params);
     }
+    
     //SUPPRESSION D'UN MEMBRE
     /**
      * @Route("/admin/adminMemberDelete/{idMember}", name="adminMemberDelete")

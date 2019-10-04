@@ -4,6 +4,7 @@ namespace AnsehhpBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 use AnsehhpBundle\Entity\Members;
 use AnsehhpBundle\Entity\Articles;
@@ -57,37 +58,38 @@ class AdminController extends Controller
 
         return $this->render('@Ansehhp/Admin/adminProfileMember.html.twig', $params);
     }
-    
+  
+
     //GESTION DE MISE A JOUR DE'UN MEMBRE
     /**
      * @Route("/admin/adminMemberUpdate/{idMember}", name="adminMemberUpdate")
-     */ 
-     public function adminMemberUpdateAction($idMember)
-     {
-         $repo=$this->getDoctrine()->getRepository(Members::class);
-         $members = $repo->find($idMember);
+     */
+    public function adminMemberUpdateAction($idMember)
+    {
+        $repo = $this->getDoctrine()->getRepository(Members::class);
+        $members = $repo->find($idMember);
 
-         $params =array(
-             'idMember'=>$idMember,
-             'members'=>$members
-         );
+        $params = array(
+            'idMember' => $idMember,
+            'members' => $members
+        );
 
-         return $this->render('@Ansehhp/Members/adminMemberUpdate.html.twig', $params);
-     }
+        return $this->render('@Ansehhp/Members/adminMemberUpdate.html.twig', $params);
+    }
     //SUPPRESSION D'UN MEMBRE
     /**
      * @Route("/admin/adminMemberDelete/{idMember}", name="adminMemberDelete")
-     */ 
-     public function adminMemberDeleteAction($idMember, Request $request)
-     {
-    
-         $params =array();
-             $request->getSession()->getFlashBag()->add('success', 'Le patient N°'.$idMember.'a bien été supprimé');
-         
+     */
+    public function adminMemberDeleteAction($idMember, Request $request)
+    {
 
-         return $this->redirecToRoute('admin/allMembers');
-     }
-     
+        $params = array();
+        $request->getSession()->getFlashBag()->add('success', 'Le patient N°' . $idMember . 'a bien été supprimé');
+
+
+        return $this->redirecToRoute('admin/allMembers',$params);
+    }
+
 
     //GESTION DES ARTICLES
     /**

@@ -9,7 +9,7 @@ namespace AnsehhpBundle\Repository;
 
 class RdvRepository extends \Doctrine\ORM\EntityRepository
 {
- 
+
     public function getRdv()
     {
         $em = $this->getEntityManager();
@@ -23,4 +23,11 @@ class RdvRepository extends \Doctrine\ORM\EntityRepository
         return $query->getQuery()->getResult();
         // on exécute la requete et on fatch.
     }
+
+    // public function getRdvByMember()
+    // {
+        // $this->createQueryBuilder("r")
+        // ->where("r.memberid = m.idMember")
+        //->orderBy("DESC");
+    // }
 }

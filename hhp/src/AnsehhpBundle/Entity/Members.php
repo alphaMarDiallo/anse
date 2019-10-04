@@ -18,6 +18,7 @@ class Members
      * @ORM\Column(name="idMember", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToOne(targetEntity="AnsehhpBundle\Entity\Rdv")
      */
     private $idmember;
 

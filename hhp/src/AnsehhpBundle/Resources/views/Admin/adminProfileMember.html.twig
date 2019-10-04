@@ -22,6 +22,8 @@
            <table class="table table-dark">
   <thead>
     <tr>
+      <th scope="col">Prénom </th>
+      <th scope="col">Nom </th>
       <th scope="col">Date </th>
       <th scope="col">Heure</th>
       <th scope="col">Motif de la consultation</th>
@@ -29,12 +31,14 @@
     </tr>
   </thead>
   <tbody>
+    {# {% for rdvs in rdv %} #}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      {# <th scope="row">{{rdv.idRdv}}</th> #}
+      {# <td>{{rdvs.memberid}}</td> #}
+      {# <td>{{rdvs.rdvDate| date("d-m-Y")}}</td> #}
+      {# <td>{{rdvs.rdvTime| date("H / m")}}</td> #}
     </tr>
+    {# {% endfor %} #}
   </tbody>
 </table>
 
