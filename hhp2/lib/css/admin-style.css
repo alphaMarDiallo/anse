@@ -1,0 +1,137 @@
+/************************************* REGLAGES GENERAUX *************************************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EAFCF4;
+  font-family: 'Lora', sans-serif !important;
+}
+
+html {
+  font-family: 'Lora', sans-serif !important;
+}
+
+.bouton_vert {
+  background-color: #98C1D9;
+  color: white;
+  padding: 0.3rem 1rem;
+  border: none;
+}
+
+/* container-fluid */
+
+.container-fluid {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+#inscription {
+  border-right: 1px solid rgb(0, 0, 0);
+}
+
+
+em {
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgb(69, 70, 70);
+
+}
+
+/* hover pour les boutons "qui, séance, témoignages, blog" */
+.hover:hover {
+  color: black;
+  background-color: #EAFCF4;
+  color: #6C969D;
+  background-color: #EAFCF4;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out 0s;
+  cursor: pointer;
+}
+
+/****************************** header****************************************/
+
+.bouton_vert {
+  background-color: #98C1D9;
+  color: white;
+  padding: 0.3rem 1rem;
+  border: none;
+}
+
+/* pour gérer la taille de la font sous le logo */
+.logo {
+  font-size: .8rem;
+  text-align: center;
+}
+
+/* pour gérer la taille du H1, trop grand si pas gérer */
+
+.accueil {
+  font-size: 1.4rem;
+}
+
+.telephone {
+  cursor: default !important;
+}
+
+.bouton_vert.article {
+  background-color: transparent;
+  border: 2px solid #98C1D9;
+  color: #98C1D9;
+}
+
+.bouton_vert.voir_plus {
+  margin-bottom: 3rem;
+}
+
+.bouton_vert.blue {
+  font-size: 1.3rem;
+  background-color: #6C969D;
+}
+
+.button_image {
+  width: 3rem;
+  display: block;
+  margin: 2rem auto;
+}
+
+
+/*  */
+aside>p>i {
+  font-size: 0.6rem;
+}
+
+#navbarSecondaire {
+  margin-left: 25.5rem;
+}
+
+.navbar-toggler {
+  margin-top: 2.5rem;
+  margin-left: 39.5rem;
+}
+
+.img-thumbnail {
+  width: 100%;
+}
+
+.rounded :hover {
+  width: 150px !important;
+  /* on affiche l'image au carré */
+  height: 150px !important;
+  border-radius: 50% !important;
+}
+
+/*  */
+/* aside>p>i {
+  font-size: 0.6rem;
+} */
+
+#navbarPrimaire {
+  position: relative;
+}
+
+#border {
+  border-right: 1px solid black;
+  height: 7rem;
+}

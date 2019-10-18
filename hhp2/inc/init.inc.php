@@ -14,7 +14,7 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 // SESSION :
-session_star();
+session_start();
 //------ CHEMIN
 define("RACINE_SITE", $_SERVER['DOCUMENT_ROOT'] . '/anse/hhp2');
 // $_SERVER['DOCUMENT_ROOT'] --> C:/xampp/htdocs
@@ -23,3 +23,16 @@ define("RACINE_SITE", $_SERVER['DOCUMENT_ROOT'] . '/anse/hhp2');
 define("URL", "http://localhost/anse/hhp2");
 //echo URL;
 // cette constante servira entre autre à enregistrer l'URL d'une photo / image dans la BDD, on ne conserve jamais la photo elle même, ce serait trop lourd pour la BDD
+
+//--------FAILLES XSS
+foreach ($_POST as $key => $value) {
+    $_POST[$key] = strip_tags(trim($value)); // 'strip_tags', supprime les balises HTML, et 'trim' supprime les espaces en debut et fin de chaine.    
+    $_POST[$key] = htmlspecialchars(trim($value));
+}
+//--------GET    
+foreach ($_GET as $key => $value) {
+    $_GET[$key] = strip_tags(trim($value));
+    $_GET[$key] = htmlspecialchars(trim($value));
+}
+
+require_once 'function.inc.php';

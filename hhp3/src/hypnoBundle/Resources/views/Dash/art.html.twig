@@ -1,0 +1,53 @@
+{% extends 'backOffice.html.twig' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <section class="row bg-dark " style="background-color:yellow;">
+        <h1 class="col-md-12 text-center  bg-dark text-info m-5"> Back-Office </h1>
+    </section>
+    <section class="row" >
+        <nav class="col-md-12 navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+               
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="{{path('patients')}}">Gestion des Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="{{path('articles')}}">Gestion des Articles</a>
+                    </li>
+                </ul>
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Deconnexion</button>
+            </div>
+        </nav> 
+    </section>
+    <main class="row">
+
+        <div class="container mt-5">
+            <h4 class="card-title">Votre Article :</h4><hr>
+
+            <div class="card text-center">
+                <div class="card-header">
+                    Featured
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+            </div>
+        </div>
+    </main>
+
+
+</div>   
+
+{% endblock %}

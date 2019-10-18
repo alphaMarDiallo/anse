@@ -1,0 +1,82 @@
+{% extends 'backOffice.html.twig' %}
+
+{% block content %}
+ {# <br><h3 class="display-4 text-center text-warning">Back Office</h3><hr><br> #}
+<div class="container-fluid">
+
+    <section class="row bg-dark " style="background-color:yellow;">
+        <h1 class="col-md-12 text-center  bg-dark text-info m-5"> Back-Office </h1>
+    </section>
+    {# <hr> #}
+    <section class="row" >
+        <nav class="col-md-12 navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                {# <a class="navbar-brand" href="#">Hidden brand</a> #}
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="{{path('patients')}}">Gestion des Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="{{path('articles')}}">Gestion des Articles</a>
+                    </li>
+                </ul>
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Deconnexion</button>
+            </div>
+        </nav> 
+    </section>
+    <main class="row">
+
+        <div class="container mt-5">
+           
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-4" style="width: 18rem;">
+                    <div class="card-header"><em>Prénom</em> <em>Nom</em></div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Date de Naissance</li>
+                            <li class="list-group-item">Email</li>
+                            <li class="list-group-item">Addresse</li>
+                            <li class="list-group-item">Phone</li>
+                            <li class="list-group-item">Pays</li>
+                            <li class="list-group-item text-center"><a href=""><i class="fas fa-user-edit text-warning m-3"></i></a><a href=""><i class="fas fa-user-slash text-danger m-3"></i></a></li>
+                        </ul>
+                    </div>   
+                </div>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date de Consultation</th>
+                            <th scope="col">Heure de Consultation</th>
+                            <th scope="col">Motif de Consultation</th>
+                            <th scope="col">Lieu de Consultation</th>
+                            <th colspan="2">Action</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>France</td>
+                            <td><a href=""><i class="fas fa-pencil-alt text-warning"></i></a></td>
+                            <td><a href=""><i class="far fa-calendar-times text-danger"></i></a></td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            
+            
+            </div>
+        </div>   
+    </main>
+
+
+
+{% endblock %}

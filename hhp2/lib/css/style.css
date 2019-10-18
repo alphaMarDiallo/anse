@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+}
+
+/************************************* REGLAGES GENERAUX *************************************/
+body {
+  background-color: #EAFCF4;
+  font-family: 'Lora', sans-serif !important;
+}
+
+html {
+  font-family: 'Lora', sans-serif !important;
+}
+
+li {
+  list-style: none;
+}
+
+.hover:hover {
+  color: black;
+  background-color: #EAFCF4;
+  color: #6C969D;
+  background-color: #EAFCF4;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out 0s;
+  cursor: pointer;
+}
+
+
+/*************************************** HEADER & FOOTER ***************************************/
+/* trait hr après le header */
+hr {
+  width: 100%;
+  border: 1px solid #d3d3d3;
+}
+
+/* pour supprimer le curseur de la  page connexion */
+a hr {
+  cursor: default;
+}
+
+/****************************** header****************************************/
+
+/* btn cliquable du header */
+.bouton_vert {
+  background-color: #98C1D9;
+  color: white;
+  padding: 0.3rem 1rem;
+  border: none;
+}
+
+/* bouton de la page article*/
+.bouton_vert.article {
+  background-color: transparent;
+  border: 2px solid #98C1D9;
+  color: #98C1D9;
+}
+
+/* bouton "voir" de la page d'accueil */
+.bouton_vert.voir_plus {
+  margin-bottom: 3rem;
+}
+
+/* 
+.bouton_vert.blue {
+  font-size: 1.3rem;
+  background-color: #6C969D;
+} */
+/* pour gérer la taille de la font sous le logo */
+.logo {
+  font-size: .8rem;
+  text-align: center;
+}
+
+/* pour gérer la taille du H1, trop grand si pas gérer */
+.accueil {
+  font-size: 1.4rem;
+}
+
+.telephone {
+  cursor: default !important;
+}
+
+/* 
+.button_image {
+  width: 3rem;
+  display: block;
+  margin: 2rem auto;
+} */
+/* photo de profil */
+.pp-size {
+  width: 100%;
+  height: auto;
+}
+
+/* HOVER DE L'IMAGE */
+.rounded :hover {
+  width: 150px !important;
+  /* on affiche l'image au carré */
+  height: 150px !important;
+  border-radius: 50% !important;
+}
+
+/*********************** DIV BANIERE EVENT ***********************/
+#event {
+  /* display: none; */
+}
+
+/* ************************************************************* */
+/* menu burger responsive pour grand écran*/
+@media screen and (min-width: 1366px) {
+  button.navbar-toggler {
+    margin-left: 59.5rem !important;
+  }
+}
+
+/* reseaux sociaux footer
+1_ Redimensionner chacun des logos en talle 60px(X)60px
+2_Reduire en forme circulaire avec le border-radius 
+3_ajouter une bordure en RGB
+4_appliquer le code du passage de la souris
+
+*/
+
+footer {
+  width: 100%;
+}
+
+footer ul li .face {
+  display: block;
+  width: 60px;
+  height: 60px;
+  /* margin: 10px auto; */
+  margin: 3rem 0.2rem;
+}
+
+footer ul li .link {
+  display: block;
+  width: 60px;
+  height: 60px;
+  /* margin: 10px auto; */
+  margin: 3rem 0.2rem;
+}
+
+footer ul li .twit {
+  display: block;
+  width: 60px;
+  height: 60px;
+  /* margin: 10px auto; */
+  margin: 3rem 0.2rem;
+
+}
+
+.image-fluid {
+  max-width: 0%;
+  height: auto;
+}
+
+.signature {
+  position: relative;
+  margin-top: -2.5rem;
+}
+
+/* css particulier (flexbox qui va la répartir de manière égale dans sa row avec le space around) a la card article dans la boucle */
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  background-color: #EAFCF4;
+}
+
+#border {
+  border-right: 1px solid black;
+  height: 7rem;
+}
+
+/*************page Qui ******************************/
+h4 {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* responsive de l'image couple sur la page qui */
+@media screen and (min-width: 740px) and (max-width: 1100px) {
+  .first-list {
+    padding: 0;
+  }
+
+  .img-fluid.couple-middle {
+    margin-top: 30%;
+  }
+
+}
+
+/* responsive de l'image poids sur la page qui */
+@media screen and (min-width: 740px) and (max-width: 1100px) {
+  .first-list {
+    padding: 0;
+  }
+
+  .img-fluid.poids-middle {
+    margin-top: 60%;
+  }
+
+}
+
+/* responsive de l'image adulte sur la page qui */
+@media screen and (min-width: 740px) and (max-width: 1100px) {
+  .first-list {
+    padding: 0;
+  }
+
+  .img-fluid.adultes-middle {
+    margin-top: 60%;
+  }
+
+}
+
+/* responsive de l'image enfants sur la page qui */
+@media screen and (min-width: 740px) and (max-width: 1100px) {
+  .first-list {
+    padding: 0;
+  }
+
+  .img-fluid.enfants-middle {
+    margin-top: 60%;
+  }
+}
+
+/* responsive de l'image enfants réglé en média quérie (format ordinateur) */
+@media only screen and (min-width : 1201px) {
+  .img-fluid.enfants-middle {
+    margin-top: 10%;
+  }
+}
+
+/* responsive de l'image adultes réglé en média quérie (format ordinateur) */
+@media only screen and (min-width : 1201px) {
+  .img-fluid.adultes-middle {
+    margin-top: 10%;
+  }
+}
+
+/* responsive du texte enfants sur la page qui */
+@media screen and (min-width: 0px) and (max-width: 740px) {
+  .first-list {
+    padding: 0;
+  }
+}
+
+#inscription {
+  border-right: 1px solid rgb(0, 0, 0);
+}
+
+/****************************************************** DISPATCHE DES ARTICLE  ******************************************************/
+/* css particulier (flexbox qui va la répartir de manière égale dans sa row avec le space around) a la card article dans la boucle */
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  background-color: #EAFCF4;
+}
+
+/*****************************************************************************************************************************************/
