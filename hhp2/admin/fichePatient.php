@@ -72,10 +72,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'show' && isset($_GET['id'])) {
                     value="<?= $member['address'] ?>">
             </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <input type="text" name="address" class="form-control" placeholder="Adresse "
-                value="<?= $member['country'] ?>">
-        </div>
+                value="<//?= $member['country'] ?>">
+        </div> -->
     </form>
         <?= $contenu;?>
     <?php

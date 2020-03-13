@@ -79,10 +79,10 @@ foreach ($_SESSION['members'] as $key => $value) {
                 <div class="card-body contact text-center h-100 white-text">
                     <h3 class="my-4 pb-2">Contact information</h3>
                     <ul class="text-lg-left list-unstyled ml-4">
-                        <li>
+                        <!-- <li>
                             <p><i class="fas fa-map-marker-alt pr-2"></i><?= $_SESSION['members']['country'] ?>
                             </p>
-                        </li>
+                        </li> -->
                         <li>
                             <p><i class="fas fa-phone pr-2"></i><?= $_SESSION['members']['phone'] ?></p>
                         </li>
@@ -91,9 +91,6 @@ foreach ($_SESSION['members'] as $key => $value) {
                         </li>
                     </ul>
                     <hr class="hr-light my-4">
-                    <!-- URL pour modification de profil, en cours -->
-                    <!-- <a href="updateProfile.php?action=update&id=<?= //$_SESSION['members']['idMember'] ?>" type="button"
-                        class="btn bouton_vert">Modifier</a> -->
                 </div>
             </div>
             <!-- Grid column -->

@@ -6,23 +6,23 @@ $contenu = "";
 $resultat = $pdo->prepare("SELECT * FROM articles ORDER BY dateArt DESC LIMIT 3");
 $resultat->execute();
 while ($articles = $resultat->fetch(PDO::FETCH_ASSOC)) :
-    $contenu .= '<div class="card text-center col-md-3 mb-5">';
+    $contenu .= '<div class="card text-center col mb-5 mr-2">';
     $contenu .= '<div class="card-header">';
     $contenu .= '<h5>' . $articles['titleArticle'] . '</h5>';
     $contenu .= '</div>';
     $contenu .= '<div class="card-body">';
     $contenu .= '<p class="card-text class="card-text">' . substr($articles['article'], 0, 100) . '...</p>';
     // la fonction subtr(variable,0,100) me permet d'afficher que les 100 premiers caractère de mon texte. le 0 représente le premier caractère qui s'affiche et 100 le dernier caractère affiché
-    $contenu .= '<a href="#">' . 'Paru le ' . $articles['dateArt'] . '</a>';
+    $contenu .= '<p>' . 'Paru le <strong>' . $articles['dateArt'] . '</strong></p>';
     $contenu .= '</div>';
     $contenu .= '<div class="card-footer text-muted">';
-    $contenu .= '<a class="btn bouton_vert article badge-2x badge-pill" type="button" href="articlesPopup.php?action=read&id=' . $articles['idArticle'] . '" aria-expanded="false" onclick="window.open(this.href, \'Popup\', \'scrollbars=1,resizable=1,height=600,width=600\'); return false;" aria-controls="collapseExample1">Lire Plus</a>';
+    $contenu .= '<a class="btn bouton_vert article badge-2x badge-pill" type="button" href="articlesPopup.php?action=read&id=' . $articles['idArticle'] . '">Lire Plus</a>';
     $contenu .= '</div>';
     $contenu .= '</div>';
 endwhile;
 ?>
-<div class="row">
-    <div class="row mx-auto" id="event">
+<div class="row" id="event">
+    <div class="row mx-auto">
         <!-- début row de la div evenement -->
         <!-- Card -->
         <div class="card card-cascade wider reverse">

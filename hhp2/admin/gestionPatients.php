@@ -20,7 +20,7 @@ while ($members = $resultat->fetch(PDO::FETCH_ASSOC)) :
     $contenu .= '<th scope="col">' . $members['firstName'] . '</th>';
     $contenu .= '<th scope="col">' . $members['lastName'] . '</th>';
     $contenu .= '<th scope="col">' . $members['email'] . '</th>';
-    $contenu .= '<th scope="col">' . $members['country'] . '</th>';
+    // $contenu .= '<th scope="col">' . $members['country'] . '</th>';
     // $contenu .= '<th scope="col">' . $members['rdvDate'] . '</th>';
     // $contenu .= '<th scope="col">' . $members['rdvTime'] . '</th>';
     $contenu .= '<th scope="col"><a href="fichePatient.php?action=show&id=' . $members['idMember'] . '"><i class="far fa-eye text-info fa-2x"></i></a></th>';
@@ -38,7 +38,7 @@ endwhile;
                 <th scope="col">Prénom</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Email</th>
-                <th scope="col">Pays</th>
+                <!-- <th scope="col">Pays</th> -->
                 <!-- <th scope="col">Jour de la consultation</th>
                 <th scope="col">Heure de la consultation</th> -->
                 <th colspan="2">Action</th>

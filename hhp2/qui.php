@@ -12,7 +12,7 @@ require_once 'inc/header.inc.php';
             <br>
             <h4 class="text-center"> Pour la thérapie de couple :</h4>
             <br>
-            <ul class="first-list p-0">
+            <ul class="first-list  text-justify p-0">
                 <li>une séance de rencontre avec les deux personnes</li>
                 <li>deux à trois séances individuelles</li>
                 <li> puis une à deux séances en couple (bilan et mise en place des nouvelles bases) </li>
@@ -28,7 +28,7 @@ require_once 'inc/header.inc.php';
             <br>
             <h4 class="text-center"> « Perte de poids » ou « Gagner en légèreté » : </h4>
             <br>
-            <ul class="first-list">
+            <ul class="first-list text-justify">
                 <li>
                     Une première séance où nous chercherons les raisons principales de votre poids, ce qui vous pèse...
                     depuis quand... Nous analyserons ce que vous avez déjà mis en place auparavant. Il n'y aura pas
@@ -57,7 +57,7 @@ require_once 'inc/header.inc.php';
             <br>
             <h4 class="text-center"> Adultes & Adolescents :</h4>
             <br>
-            <ul class="first-list p-0">
+            <ul class="first-list text-justify p-0">
                 <li>Une première séance nous permettra de définir ensemble vos besoins (1h30 – 1h45) grâce à nos
                     échanges basés sur de la bienveillance. Il n'y aura pas forcément de techniques d'hypnose ce jour-là
                     car nos échanges pourraient prendre l'intégralité de la séance.</li>
@@ -75,7 +75,7 @@ require_once 'inc/header.inc.php';
             <br>
             <h4 class="text-center"> Enfants : </h4>
             <br>
-            <ul class="first-list">
+            <ul class="first-list text-justify">
                 <li>
                     Une première séance où nous chercherons les raisons principales de votre poids, ce qui vous pèse...
                     depuis quand... Nous analyserons ce que vous avez déjà mis en place auparavant. Il n'y aura pas

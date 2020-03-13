@@ -32,16 +32,16 @@ if (isset($_POST['inscription'])) {
     if (empty($address) || (iconv_strlen($address) < 2 ||   iconv_strlen($address) > 201)) {
         $errors .= '<div class="col-md-4 offset-md-4 alert alert-danger text-center text-dark">Veuillez entrer une adresse comprise entre 2 et 200 caractères</div>';
     }
-    if (empty($country) || $country == 'default') {
-        $errors .= '<div class="col-md-4 offset-md-4 alert alert-danger text-center text-dark">Veuillez renseigner vôtre pays</div>';
-    }
+    // if (empty($country) || $country == 'default') {
+    //     $errors .= '<div class="col-md-4 offset-md-4 alert alert-danger text-center text-dark">Veuillez renseigner vôtre pays</div>';
+    // }
     if (empty($phone) || !preg_match('#^[0-9]{10}+$#', $phone)) {
         $errors .= '<div class="col-md-4 offset-md-4 alert alert-danger text-center text-dark">Veuillez entrer un numéro de téléphone valide</div>';
     }
     // si le formulaire ne comporte pas d'erreurs, il est validé et l'enregistrement en base de donnée se fait
     if (empty($errors)) {
         // requete préparée insertion membre
-        $member_insert = $pdo->prepare("INSERT INTO members (firstName, lastName, dateOfBirth, email, address, phone, password, country) VALUES (:firstName, :lastName, :dateOfBirth , :email, :address, :phone, :password, :country)");
+        $member_insert = $pdo->prepare("INSERT INTO members (firstName, lastName, dateOfBirth, email, address, phone, password) VALUES (:firstName, :lastName, :dateOfBirth , :email, :address, :phone, :password)");
 // *************************
         $member_insert->bindValue(":firstName", $firstName, PDO::PARAM_STR);
         $member_insert->bindValue(":lastName", $lastName, PDO::PARAM_STR);
@@ -50,7 +50,7 @@ if (isset($_POST['inscription'])) {
         $member_insert->bindValue(":address", $address, PDO::PARAM_STR);
         $member_insert->bindValue(":phone", $phone, PDO::PARAM_INT);
         $member_insert->bindValue(":password", $passwordSecur, PDO::PARAM_STR);
-        $member_insert->bindValue(":country", $country, PDO::PARAM_STR);
+        // $member_insert->bindValue(":country", $country, PDO::PARAM_STR);
 // *************************
 $member_insert->execute();
 // *************************
@@ -147,14 +147,14 @@ if (isset($_POST["connexion"])) {
                         placeholder="Entrer vôtre adresse" name="address">
                 </div>
                 <!-- pays -->
-                <div class="form-group">
+                <!-- <div class="form-group">
 
                     <select id="inputState" class="form-control rounded-pill text-center m-3" name="country">
                         <option value="default" selected>Pays</option>
                         <option value="fr">France</option>
                         <option value="be">Belgique</option>
                     </select>
-                </div>
+                </div> -->
                 <!-- telephone -->
                 <div class="form-group">
 

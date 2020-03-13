@@ -1,7 +1,7 @@
 <?php
 // J'effectue mon code de déconnection
 if (isset($_GET['action']) && $_GET['action'] == 'disconnect') {
-    session_destroy();//je détruit la SESSION du membre
+    session_destroy(); //je détruit la SESSION du membre
     redirect("index.php"); // et je le renvoie sur la page d'accueil
 }
 ?>
@@ -112,6 +112,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'disconnect') {
                                                 ROUGIER</span>
                                         </a>
                                     </li>
+                                    <?php if (isset($_SESSION['members'])) { ?>
+                                    <li class="nav-item ml-2">
+                                        <a class="nav-link" href="profile.php">
+                                            <span class="border border-light rounded-pill btn hover">Mon Profil</span>
+                                        </a>
+                                    </li>
+                                    <?php } ?>
                                 </div>
                             </ul>
                         </div>

@@ -34,14 +34,14 @@ if ($_POST) {
             $_POST[$indice] = htmlspecialchars($valeur, ENT_QUOTES);
         } // Fin foreach
         // Requete d'insertion 
-        $newQuestion = $pdo->prepare("INSERT INTO faq (civilite, faqFirstName, faqLastName, faqEmail, faqMessage) VALUES (:faqFirstName, :faqLastName, :faqEmail, :faqMessage)");
+        $newQuestion = $pdo->prepare("INSERT INTO faq (civilite, faqFirstName, faqLastName, faqEmail, faqMessage) VALUES (:civilite, :faqFirstName, :faqLastName, :faqEmail, :faqMessage)");
         $newQuestion->bindValue(":civilite", $civilite, PDO::PARAM_STR);
         $newQuestion->bindValue(":faqFirstName", $faqFirstName, PDO::PARAM_STR);
         $newQuestion->bindValue(":faqLastName", $faqLastName, PDO::PARAM_STR);
         $newQuestion->bindValue(":faqEmail", $faqEmail, PDO::PARAM_STR);
         $newQuestion->bindValue(":faqMessage", $faqMessage, PDO::PARAM_STR);
         $newQuestion->execute();
-//************
+        //************
         $faqMsgValidate .= '<div class="alert alert-success">votre question a bien été envoyé. </div>';
     } // Fin if(empty())
 } // Fin if($_POST)       
@@ -103,10 +103,10 @@ if ($_POST) {
         </div>
         <!-- SECOND COLUMN -->
         <!-- Si un membre a ouvert une SESSION (est connecté) alors il peut prendre un RDV -->
-        <?php if (isset($_SESSION['members'])) {  ?>
         <div class="col-md-7 col-sm-12 col-12">
+            <?php if (isset($_SESSION['members'])) {  ?>
             <a id="TTE-de2dc114-eff3-4089-ae3d-3a9e37aa70f7" href="https://10to8.com/book/zhyiolarkffeheefus/"
-                target="_blank">See Online Booking Page</a>
+                target="_blank">Prendre un rendez-vous en ligne</a>
             <script src="https://d3saea0ftg7bjt.cloudfront.net/embed/js/embed.min.js"></script>
             <script>
             window.TTE.init({
@@ -114,16 +114,15 @@ if ($_POST) {
                 uuid: "de2dc114-eff3-4089-ae3d-3a9e37aa70f7",
             });
             </script>
-        </div>
-        <!-- Si il n'y a pas de SESSION d'ouverte (personne n'est inscrit ou non connecté) alors on l'invite à s'inscrire ou a se connecter -->
-        <?php } elseif (!isset($_SESSION['members'])) {  ?>
-        <div class="row">
-            <div class="col-md-7 col-sm-12 col-12 alert alert-info text-secondary ">
-                Vous devez vous inscrire pour prendre un Rendez-Vous.
+            <!-- Si il n'y a pas de SESSION d'ouverte (personne n'est inscrit ou non connecté) alors on l'invite à s'inscrire ou a se connecter -->
+            <?php } elseif (!isset($_SESSION['members'])) { ?>
+            <div class="row" id="center">
+                <div class=" col-md-7 col-sm-12 col-12 alert-info text-secondary container">
+                    Vous devez vous inscrire pour prendre un Rendez-Vous.
+                </div>
             </div>
-
+            <?php  } ?>
         </div>
-        <?php  } ?>
     </div>
 </div>
 <!--FIN .row-->
